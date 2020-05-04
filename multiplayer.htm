@@ -1,0 +1,100 @@
+<html>
+<head>
+	<title>Canvas Game</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style type="text/css">
+		#connect{
+			font-size: 20px;
+			color: #ffffff;
+			background-color: 	#55ff55; 
+		}
+		#connect:disabled{
+			background-color: #227722; 
+		}
+		
+		#myCanvas{
+			border: 0px;
+			width: 196vmin;
+			max-width: 98vw;
+			height: 98vmin;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+		}
+		
+		#register{
+			border: 2px;
+			minwidth: 16em;
+			max-width: 98vw;
+			height: 10em;
+			background-color: #f5eb7d;
+			padding: 30px;	
+			position: absolute;
+			top: 40%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		
+		body{
+			margin: auto;
+			padding: 0px;
+		}
+	</style>
+
+	<script type="text/javascript" src="multiplayer.js"></script>
+
+</head>
+
+<body onLoad="javascript:preload();">
+
+	<canvas id="myCanvas" style="border:1px solid #000000;"></canvas> 
+
+	<div id="register">
+		<center>
+		<h3>Welcome to Babboo Hostel</h3>
+		<div id="loginInfo"></div>
+		<input type="text" id="username" name="username" placeholder="Please choose a name" style="font-size: 20px;" /><br/><br />
+		<input type="button" id="connect" name="connect" onClick="javascript: connect();" value="Connect!"/>
+		</center>
+	</div>
+	
+	<div class="hidden">
+	<script type="text/javascript">
+		<!--//--><![CDATA[//><!--
+			var images = new Array()
+			function preload() {
+				for (i = 0; i < preload.arguments.length; i++) {
+					images[i] = new Image()
+					images[i].src = preload.arguments[i]
+				}
+			}
+			preload(
+				"tiles/grass1.png",
+				"tiles/mud1.png",
+				"tiles/player2/player2north.png",
+				"tiles/player2/player2south.png",
+				"tiles/player2/player2east.png",
+				"tiles/player2/player2west.png",
+				"tiles/crossOverlay.png"
+			)
+			
+			var playerImages = new Array()
+			function preloadPlayer() {
+				for (i = 0; i < preloadPlayer.arguments.length; i++) {
+					playerImages[i] = new Image()
+					playerImages[i].src = preloadPlayer.arguments[i]
+				}
+			}
+			preloadPlayer(
+				"tiles/player2/player2north.png",
+				"tiles/player2/player2east.png",
+				"tiles/player2/player2south.png",
+				"tiles/player2/player2west.png"
+			)
+		//--><!]]>
+	</script>
+</div>
+</body>
+</html>
